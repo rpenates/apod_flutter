@@ -1,5 +1,7 @@
 
 
+import 'dart:convert';
+
 class Apod {
     String date;
     String title;
@@ -9,14 +11,16 @@ class Apod {
     Apod({
         this.date,
         this.title,
-        this.explanation
+        this.explanation,
+        this.imageUrl
     });
 
     factory Apod.fromJson(Map<String, dynamic> jsonBody) {
         return Apod(
             date: jsonBody["date"],
             title: jsonBody["title"],
-            explanation: jsonBody["explanation"]
+            explanation: jsonBody["explanation"],
+            imageUrl: jsonBody["hdurl"]
         );
     }
 }

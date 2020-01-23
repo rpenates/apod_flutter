@@ -13,7 +13,7 @@ class NasaApiProvider {
         print ("Making http request to NASA API");
 
         final response = await httpClient.get(apiUrl);
-        print("Api response ==> $response.body");
+        print("Api response ==> $response.body.toString()");
         if (response.statusCode == 200) {
             return Apod.fromJson(json.decode(response.body));
         } else {

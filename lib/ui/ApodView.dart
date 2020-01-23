@@ -31,7 +31,13 @@ Widget buildView (AsyncSnapshot<Apod> snapshot) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(snapshot.data.title),
-        Text(snapshot.data.explanation)
+          Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                          Text(snapshot.data.title),
+              ],
+          ),
+          Image.network(snapshot.data.imageUrl),
+          Text(snapshot.data.explanation)
       ],);
 }
