@@ -28,7 +28,9 @@ class ApodView extends StatelessWidget {
 
 Widget buildView (AsyncSnapshot<Apod> snapshot) {
 
-    return Column(
+    return ListView(
+      children: <Widget>[
+      Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
           Row(
@@ -39,5 +41,7 @@ Widget buildView (AsyncSnapshot<Apod> snapshot) {
           ),
           Image.network(snapshot.data.imageUrl),
           Text(snapshot.data.explanation)
-      ],);
+      ],)
+      ],
+    );
 }
